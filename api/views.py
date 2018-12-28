@@ -18,11 +18,11 @@ def login(request):
 def get_shop_list(request):
     username = request.session.get("username")
     if username:
-        result = {'code': 0, 'data': [{"id": 1001, "name": "橘子"}, {"id": 1002, "name": "哈密瓜"}], "msg": "请求成功"}
+        # result = {'code': 0, 'data': [{"id": 1001, "name": "橘子"}, {"id": 1002, "name": "哈密瓜"}], "msg": "请求成功"}
+        result = [{'code': 0, 'data': [{"id": 1001, "name": "橘子"}, {"id": 1002, "name": "哈密瓜"}], "msg": "请求成功"}]
     else:
         result = {'code': -1, 'msg': '登录失败'}
-    print(result)
-    return JsonResponse(result)
+    return JsonResponse(result, safe=False)
 
 
 @csrf_exempt
