@@ -1,6 +1,6 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
-
+import json
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 
@@ -33,4 +33,5 @@ def save_shop(request):
     else:
         result = {'code': -1, 'msg': '登录失败'}
 
-    return JsonResponse(result)
+    # return HttpResponse(json.dumps(result))
+    return JsonResponse(result,  safe=False)

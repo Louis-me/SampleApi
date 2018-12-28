@@ -19,8 +19,4 @@ def get_api():
 
 
 if __name__ == "__main__":
-    import json
-    a = '{"data": "960487c8-0982-11e9-9752-bcee7b76a849", "aa": "97362e74-0982-11e9-a47a-bcee7b76a849"}'
-    b = json.loads(a)
-    # b = ast.literal_eval(a)
-    print("====b=type=%s,value=%s===" % (b, type(b)))
+    get_api()
